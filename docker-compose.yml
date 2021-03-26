@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  fake_news_notebook:
+    container_name: fake_news_detection_container
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/home/jovyan/work
+    ports:
+      - 8888:8888
